@@ -12,7 +12,7 @@ def to_image(url):
     return '<img src="'+ url + '" width="32" >'
 
 def chopped_date(start_time):
-    return start_time[5:10]
+    return start_time[:10]
 
 def display_forecast(zip_code, country_code="US"):
     """
@@ -47,7 +47,7 @@ def display_forecast(zip_code, country_code="US"):
     for period in daytime_periods:
         #print(period.keys())
         print("-------------")
-        print(period["name"], period["startTime"][0:7])
+        print(period["name"], period["startTime"][:10])
         print(period["shortForecast"], f"{period['temperature']} {degree_sign}{period['temperatureUnit']}")
        #print(period["detailedForecast"])
         display(Image(url=period["icon"]))
